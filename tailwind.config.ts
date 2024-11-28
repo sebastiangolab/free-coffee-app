@@ -8,11 +8,17 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        small: "480px",
+        medium: "768px",
+        large: "976px",
+        huge: "1440px",
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        white: "#fff",
+        black: "#333",
       },
     },
   },
   plugins: [],
-} satisfies Config;
+} as Config;
