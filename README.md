@@ -13,8 +13,8 @@ link
 ## Build With
 
 <ul>
-  <li><a href="#built-with">React</a></li>
-  <li><a href="#built-with">Next.js</a></li>
+  <li>React</li>
+  <li>Next.js</li>
 </ul>
 
 <!-- GETTING STARTED -->
