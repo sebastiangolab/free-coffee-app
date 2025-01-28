@@ -12,9 +12,6 @@
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "husky": "husky"
   },
-  "pre-commit": [
-    "husky"
-  ],
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -35,7 +32,6 @@
     "eslint-plugin-react": "7.34.2",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "husky": "9.0.11",
-    "pre-commit": "^1.0.10"
+    "husky": "9.0.11"
   }
 }
