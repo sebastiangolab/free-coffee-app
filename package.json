@@ -1,24 +1,27 @@
 {
   "name": "nextjs-boilerplate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint-fix": "next lint --fix",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
-    "prepare": "husky"
+    "husky": "husky"
   },
+  "pre-commit": [
+    "husky"
+  ],
   "dependencies": {
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^15.1.6"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.2.4",
-    "@svgr/webpack": "^8.1.0",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -31,7 +34,8 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "7.34.2",
     "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "9.0.11",
-    "lint-staged": "15.2.7"
+    "pre-commit": "^1.0.10"
   }
 }

@@ -1,18 +1,15 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       screens: {
-        small: "480px",
-        medium: "768px",
-        large: "976px",
-        huge: "1440px",
+        xsmall: "576px",
+        small: "767px",
+        medium: "991px",
+        large: "1199px",
+        huge: "1469px",
       },
       colors: {
         white: "#fff",
