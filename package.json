@@ -13,11 +13,13 @@
     "husky": "husky"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^5.5.0",
     "@tailwindcss/postcss": "^4.0.0",
     "next": "^15.1.6",
     "postcss": "^8.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "stripe": "^17.6.0",
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
