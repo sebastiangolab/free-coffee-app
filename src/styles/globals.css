@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 *,
 *::before,
 *::after {
@@ -12,5 +8,5 @@
 
 body {
   box-sizing: border-box;
-  color: theme(colors.black);
+  color: #333;
 }
