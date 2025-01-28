@@ -10,9 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "ImDevBlog",
-  description:
-    "Blog about programming, javascript, react, nextjs, good practices and others.",
+  title: "Next.js boilerplate",
+  description: "page description",
 };
 
 export default function RootLayout({
