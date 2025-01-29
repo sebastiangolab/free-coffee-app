@@ -10,8 +10,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js boilerplate",
-  description: "page description",
+  title: "Free Coffee App",
+  description:
+    "Next.js application exercise where i implement Stripe payment checkout",
 };
 
 export default function RootLayout({
