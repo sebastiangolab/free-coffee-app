@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+  --color-white: #fff;
+  --color-black: #333;
+  --color-page-background: #f8e0d4;
+
+  --breakpoint-xsmall: 576px;
+  --breakpoint-small: 767px;
+  --breakpoint-medium: 991px;
+  --breakpoint-large: 1199px;
+  --breakpoint-huge: 1469px;
+}
+
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
+  @apply p-0 m-0;
   box-sizing: inherit;
 }
 
 body {
-  box-sizing: border-box;
-  color: #333;
+  @apply box-border text-black bg-page-background;
 }
