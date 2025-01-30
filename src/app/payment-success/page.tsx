@@ -35,7 +35,7 @@ const PaymentSuccessElement = () => {
 
 export default function PaymentSuccessPage() {
   return (
-    <Suspense fallback={<></>}>
+    <Suspense>
       <PaymentSuccessElement />;
     </Suspense>
   );
