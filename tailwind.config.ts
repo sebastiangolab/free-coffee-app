@@ -15,7 +15,9 @@ export default {
       colors: {
         white: "#fff",
         black: "#333",
+        dark: "#000",
         pageBackground: "#f8e0d4",
+        error: "#df1b41",
       },
     },
   },

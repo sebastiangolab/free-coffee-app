@@ -1,5 +1,9 @@
 .button {
-  @apply bg-black py-3 px-5 text-base text-white font-medium rounded-xl;
+  @apply bg-black py-3 px-5 text-base text-white font-medium rounded-xl transition-all;
+}
+
+.button:hover {
+  @apply bg-dark;
 }
 
 .button.fullWidth {
