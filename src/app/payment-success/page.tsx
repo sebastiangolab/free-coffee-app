@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import SuccessPaymentMessage from "@/components/SuccessPaymentMessage";
 import { PaymentIntent } from "@stripe/stripe-js";
 
-export default function PaymentSuccessPage() {
+const PaymentSuccessElement = () => {
   const searchParams = useSearchParams();
   const [paymentIntent, setPaymentIntent] = useState<PaymentIntent | null>(
     null
@@ -24,11 +24,19 @@ export default function PaymentSuccessPage() {
         .then((response) => response.json())
         .then((data) => setPaymentIntent(data));
     }
-  }, [searchParams]);
+  }, []);
 
   if (!paymentIntent) {
     return null;
   }
 
   return <SuccessPaymentMessage paymentId={""} />;
+};
+
+export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={<></>}>
+      <PaymentSuccessElement />;
+    </Suspense>
+  );
 }
