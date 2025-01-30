@@ -11,3 +11,7 @@
 body {
   @apply box-border text-black bg-pageBackground;
 }
+
+strong {
+  @apply font-medium;
+}
