@@ -1,0 +1,11 @@
+.wrapper {
+  @apply w-[550px] bg-white rounded-3xl p-10;
+}
+
+.loadingMessage {
+  @apply text-xl;
+}
+
+.hidden {
+  @apply invisible h-0 overflow-hidden;
+}

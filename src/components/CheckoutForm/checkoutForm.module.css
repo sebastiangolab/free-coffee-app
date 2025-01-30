@@ -1,0 +1,11 @@
+.demoMessage {
+  @apply text-sm text-center mb-4;
+}
+
+.paymentElementWrapper {
+  @apply mb-6;
+}
+
+.errorMessage {
+  @apply text-error mt-4;
+}

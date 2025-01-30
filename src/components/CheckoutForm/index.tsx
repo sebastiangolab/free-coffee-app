@@ -4,14 +4,38 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import { Layout } from "@stripe/stripe-js";
+import { Layout, StripePaymentElementOptions } from "@stripe/stripe-js";
+import Button from "../Button";
+import styles from "./checkoutForm.module.css";
 
-const CheckoutForm = (): ReactElement => {
+const paymentElementOptions: StripePaymentElementOptions = {
+  paymentMethodOrder: [
+    "card",
+    "apple_pay",
+    "google_pay",
+    "blik",
+    "p24",
+    "customer_balance",
+  ],
+  layout: "accordion" as Layout,
+};
+
+type CheckoutFormProps = {
+  setIsCheckoutLoading: (value: boolean) => void;
+};
+
+const CheckoutForm = ({
+  setIsCheckoutLoading,
+}: CheckoutFormProps): ReactElement<CheckoutFormProps> => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string | undefined>();
+  const [isConfirmPaymentLoading, setIsConfirmPaymentLoading] =
+    useState<boolean>(false);
+
+  const [paymentErrorMessage, setPaymentErrorMessage] = useState<string | null>(
+    null
+  );
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -20,7 +44,7 @@ const CheckoutForm = (): ReactElement => {
       return;
     }
 
-    setIsLoading(true);
+    setIsConfirmPaymentLoading(true);
 
     const { error } = await stripe.confirmPayment({
       elements,
@@ -31,37 +55,39 @@ const CheckoutForm = (): ReactElement => {
     });
 
     if (error) {
-      setErrorMessage(error.message);
+      setPaymentErrorMessage(error.message || null);
     }
 
-    setIsLoading(false);
-  };
-
-  if (!stripe || !elements) {
-    return <h1>...Loading</h1>;
-  }
-
-  const options = {
-    paymentMethodOrder: [
-      "cards",
-      "apple_pay",
-      "google_pay",
-      "blik",
-      "p24",
-      "customer_balance",
-    ],
-    layout: "accordion" as Layout,
+    setIsConfirmPaymentLoading(false);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <PaymentElement options={options} id="payment-element" />
+      <p className={styles.demoMessage}>
+        This is demo payment checkout,{" "}
+        <strong>it not take your money :)</strong>
+      </p>
 
-      <button type="submit" disabled={isLoading || !stripe || !elements}>
-        <span>{isLoading ? "spinner" : "Pay now"}</span>
-      </button>
+      <div className={styles.paymentElementWrapper}>
+        <PaymentElement
+          options={paymentElementOptions}
+          id="payment-element"
+          onReady={() => setIsCheckoutLoading(false)}
+        />
+      </div>
 
-      {errorMessage && <div>{errorMessage}</div>}
+      <Button
+        isSubmitButton
+        disabled={isConfirmPaymentLoading}
+        title="Finalize payment"
+        isFullWidth
+      >
+        Finalize payment
+      </Button>
+
+      {paymentErrorMessage ? (
+        <div className={styles.errorMessage}>{paymentErrorMessage}</div>
+      ) : null}
     </form>
   );
 };
