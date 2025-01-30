@@ -49,7 +49,7 @@ const CheckoutForm = ({
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `/payment-success?payment_intent={CHECKOUT_SESSION_ID}`,
+        return_url: `${process.env.BASE_URL}payment-success?payment_intent={CHECKOUT_SESSION_ID}`,
       },
     });
 
