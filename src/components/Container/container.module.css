@@ -1,0 +1,11 @@
+.wrapper {
+  @apply flex justify-center items-center w-screen min-h-screen p-10;
+}
+
+.container {
+  @apply flex items-center;
+}
+
+.container > div:first-child {
+  @apply mr-32;
+}
