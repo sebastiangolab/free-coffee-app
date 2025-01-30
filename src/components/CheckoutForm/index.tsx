@@ -49,7 +49,6 @@ const CheckoutForm = ({
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        // eslint-disable-next-line camelcase
         return_url: `${process.env.BASE_URL}payment-success`,
       },
     });

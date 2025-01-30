@@ -9,3 +9,16 @@
 .button.fullWidth {
   @apply w-full;
 }
+
+
+@media (max-width: theme(screens.medium)) {
+  .button {
+    @apply text-sm;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .button {
+    @apply text-base;
+  }
+}

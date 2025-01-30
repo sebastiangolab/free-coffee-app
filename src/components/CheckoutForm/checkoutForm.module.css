@@ -9,3 +9,21 @@
 .errorMessage {
   @apply text-error mt-4;
 }
+
+@media (max-width: theme(screens.medium)) {
+  .demoMessage {
+    @apply text-xs text-center mb-3;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .demoMessage {
+    @apply text-base;
+  }
+}
+
+@media (max-width: theme(screens.xsmall)) {
+  .demoMessage {
+    @apply text-sm;
+  }
+}

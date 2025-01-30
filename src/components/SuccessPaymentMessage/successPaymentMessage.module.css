@@ -13,3 +13,21 @@
 .subtitle {
   @apply text-4xl mb-7;
 }
+
+@media (max-width: theme(screens.small)) {
+  .wrapper {
+    @apply pb-1;
+  }
+  
+  .idText {
+    @apply mb-2;
+  }
+  
+  .title {
+    @apply text-6xl mb-3;
+  }
+  
+  .subtitle {
+    @apply text-3xl mb-6;
+  }
+}

@@ -1,11 +1,77 @@
 .wrapper {
-  @apply flex justify-center items-center w-full min-h-screen p-10 overflow-x-hidden;
+  @apply flex flex-col justify-center items-center w-full min-h-screen p-10 overflow-x-hidden;
 }
 
 .container {
-  @apply flex items-center;
+  @apply flex;
 }
 
 .container > div:nth-child(2) {
-  @apply ml-32;
+  @apply ml-24;
+}
+
+.mobileAuthorText {
+  @apply hidden;
+}
+
+@media (max-width: theme(screens.huge)) {
+  .wrapper {
+    @apply p-9;
+  }
+
+  .container > div:nth-child(2) {
+    @apply ml-20;
+  }
+}
+
+@media (max-width: theme(screens.large)) {
+  .wrapper {
+    @apply p-8;
+  }
+
+  .container > div:nth-child(2) {
+    @apply ml-16;
+  }
+}
+
+@media (max-width: theme(screens.medium)) {
+  .wrapper {
+    @apply p-6 py-8;
+  }
+
+  .container > div:nth-child(2) {
+    @apply ml-9;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .wrapper {
+    @apply p-6 justify-start items-start;
+  }
+
+  .successPageContainer {
+    @apply justify-center items-center;
+  }
+
+  .container {
+    @apply flex-col w-full;
+  }
+
+  .container > div:nth-child(2) {
+    @apply ml-0;
+  }
+
+  .mobileAuthorText {
+    @apply block w-full text-center text-sm mt-3;
+  }
+
+  .successPageContainer .mobileAuthorText {
+    @apply hidden;
+  }
+}
+
+@media (max-width: theme(screens.xsmall)) {
+  .wrapper {
+    @apply p-4 overflow-x-auto min-w-[375px];
+  }
 }

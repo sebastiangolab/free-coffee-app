@@ -1,15 +1,80 @@
 .content {
-  @apply text-center pt-1;
+  @apply text-center pt-8;
 }
 
 .title {
-  @apply text-7xl font-medium leading-none mb-2;
+  @apply text-6xl font-medium leading-none mb-2;
 }
 
 .subtitle {
-  @apply text-4xl mb-7;
+  @apply text-3xl mb-6;
+}
+
+.image {
+  @apply w-[360px];
 }
 
 .authorText {
   @apply text-base font-light;
+}
+
+
+@media (max-width: theme(screens.medium)) {
+  .content {
+    @apply pt-5;
+  }
+
+  .title {
+    @apply text-4xl mb-1;
+  }
+
+  .subtitle {
+    @apply text-xl mb-5;
+  }
+
+  .image {
+    @apply w-[250px];
+  }
+
+  .authorText {
+    @apply text-sm;
+  }
+}
+
+
+@media (max-width: theme(screens.small)) {
+  .content {
+    @apply flex flex-col items-center mb-8 pt-4;
+  }
+
+  .title {
+    @apply text-6xl mb-2;
+  }
+
+  .subtitle {
+    @apply text-3xl mb-7;
+  }
+
+  .authorText {
+    @apply hidden;
+  }
+}
+
+
+@media (max-width: theme(screens.xsmall)) {
+  .content {
+    @apply pt-2 mb-6;
+  }
+
+  .title {
+    @apply text-5xl mb-1;
+  }
+
+  .subtitle {
+    @apply text-2xl mb-5;
+  }
+
+  .image {
+    @apply w-[250px];
+  }
 }

@@ -9,7 +9,6 @@ export async function POST(req: NextRequest) {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
       currency: "eur",
-      // eslint-disable-next-line camelcase
       automatic_payment_methods: {
         enabled: true,
       },

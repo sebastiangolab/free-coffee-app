@@ -17,13 +17,14 @@ const Content = (): ReactElement => {
         className={styles.image}
         src={CoffeeCupImage}
         alt={"coffee cup"}
-        width={384}
-        height={384}
+        width={420}
+        height={420}
       />
 
       <Link
         className={styles.authorText}
         href="https://sebastiangolab.pl/"
+        target="_blank"
         title="Sebastian Golab page"
       >
         By Sebastian Golab

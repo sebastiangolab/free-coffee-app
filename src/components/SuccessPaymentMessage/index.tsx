@@ -11,7 +11,7 @@ const SuccessPaymentMessage = ({
   paymentId,
 }: SuccessPaymentMessageProps): ReactElement<SuccessPaymentMessageProps> => {
   return (
-    <Container>
+    <Container isSuccessPage>
       <div className={styles.wrapper}>
         <p className={styles.idText}>Stripe payment id: {paymentId}</p>
 
