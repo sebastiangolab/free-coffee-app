@@ -1,19 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 import SuccessPaymentMessage from "@/components/SuccessPaymentMessage";
 import { PaymentIntent } from "@stripe/stripe-js";
 
 export default function PaymentSuccessPage() {
-  const router = useRouter();
+  const searchParams = useSearchParams();
   const [paymentIntent, setPaymentIntent] = useState<PaymentIntent | null>(
     null
   );
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(router.asPath);
-    const paymentIntentId = urlParams.get("payment_intent");
+    const paymentIntentId = searchParams.get("payment_intent");
 
     if (paymentIntentId) {
       fetch(`/api/payment-intent/${paymentIntentId}`, {
@@ -25,7 +24,7 @@ export default function PaymentSuccessPage() {
         .then((response) => response.json())
         .then((data) => setPaymentIntent(data));
     }
-  }, [router.asPath]);
+  }, [searchParams]);
 
   if (!paymentIntent) {
     return null;
