@@ -1,15 +1,15 @@
 .content {
-  @apply text-center;
+  @apply text-center pt-1;
 }
 
 .title {
-  @apply text-7xl leading-none;
+  @apply text-7xl font-medium leading-none mb-2;
 }
 
 .subtitle {
-  @apply text-3xl mb-6;
+  @apply text-4xl mb-7;
 }
 
 .authorText {
-  @apply text-base;
+  @apply text-base font-light;
 }

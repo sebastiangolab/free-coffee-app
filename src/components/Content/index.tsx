@@ -8,7 +8,10 @@ const Content = (): ReactElement => {
   return (
     <div className={styles.content}>
       <h1 className={styles.title}>Free Coffee</h1>
-      <h2 className={styles.subtitle}>for me, only 1 euro</h2>
+
+      <h2 className={styles.subtitle}>
+        for me, only <strong>1 euro</strong>
+      </h2>
 
       <Image
         className={styles.image}
