@@ -1,0 +1,15 @@
+.wrapper {
+  @apply text-center pb-2;
+}
+
+.idText {
+  @apply text-lg mb-3;
+}
+
+.title {
+  @apply text-7xl font-medium leading-none mb-3;
+}
+
+.subtitle {
+  @apply text-4xl mb-7;
+}

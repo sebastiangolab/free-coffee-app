@@ -1,5 +1,5 @@
 .button {
-  @apply bg-black py-3 px-5 text-base text-white font-medium rounded-xl transition-all;
+  @apply bg-black text-base text-white font-medium rounded-xl transition-all inline-block py-3 px-8;
 }
 
 .button:hover {

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import SuccessPaymentMessage from "@/components/SuccessPaymentMessage";
 import { useStripe } from "@stripe/react-stripe-js";
 
 export default function PaymentSuccessPage() {
   const stripe = useStripe();
-  const [intentId, setIntentId] = useState<string | null>(null);
+  const [paymentId, setPaymentId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!stripe) {
@@ -25,9 +26,13 @@ export default function PaymentSuccessPage() {
         return;
       }
 
-      setIntentId(paymentIntent.id);
+      setPaymentId(paymentIntent.id);
     });
   }, [stripe]);
 
-  return <div>is ok, id: {intentId}</div>;
+  if (!paymentId) {
+    return null;
+  }
+
+  return <SuccessPaymentMessage paymentId={paymentId ?? ""} />;
 }
