@@ -1,16 +1,7 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --color-white: #fff;
-  --color-black: #333;
-  --color-page-background: #f8e0d4;
-
-  --breakpoint-xsmall: 576px;
-  --breakpoint-small: 767px;
-  --breakpoint-medium: 991px;
-  --breakpoint-large: 1199px;
-  --breakpoint-huge: 1469px;
-}
 
 *,
 *::before,
@@ -20,5 +11,5 @@
 }
 
 body {
-  @apply box-border text-black bg-page-background;
+  @apply box-border text-black bg-pageBackground;
 }
