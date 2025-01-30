@@ -1,38 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import SuccessPaymentMessage from "@/components/SuccessPaymentMessage";
-import { useStripe } from "@stripe/react-stripe-js";
+import { PaymentIntent } from "@stripe/stripe-js";
 
 export default function PaymentSuccessPage() {
-  const stripe = useStripe();
-  const [paymentId, setPaymentId] = useState<string | null>(null);
+  const router = useRouter();
+  const [paymentIntent, setPaymentIntent] = useState<PaymentIntent | null>(
+    null
+  );
 
   useEffect(() => {
-    if (!stripe) {
-      return;
+    const urlParams = new URLSearchParams(router.asPath);
+    const paymentIntentId = urlParams.get("payment_intent");
+
+    if (paymentIntentId) {
+      fetch(`/api/payment-intent/${paymentIntentId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => setPaymentIntent(data));
     }
+  }, [router.asPath]);
 
-    const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
-    );
-
-    if (!clientSecret) {
-      return;
-    }
-
-    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-      if (!paymentIntent) {
-        return;
-      }
-
-      setPaymentId(paymentIntent.id);
-    });
-  }, [stripe]);
-
-  if (!paymentId) {
+  if (!paymentIntent) {
     return null;
   }
 
-  return <SuccessPaymentMessage paymentId={paymentId ?? ""} />;
+  return <SuccessPaymentMessage paymentId={""} />;
 }
