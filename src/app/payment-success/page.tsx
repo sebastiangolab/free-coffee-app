@@ -26,17 +26,13 @@ const PaymentSuccessElement = () => {
     }
   }, []);
 
-  if (!paymentIntent) {
-    return null;
-  }
-
-  return <SuccessPaymentMessage paymentId={""} />;
+  return <SuccessPaymentMessage paymentIntent={paymentIntent} />;
 };
 
 export default function PaymentSuccessPage() {
   return (
     <Suspense>
-      <PaymentSuccessElement />;
+      <PaymentSuccessElement />
     </Suspense>
   );
 }
