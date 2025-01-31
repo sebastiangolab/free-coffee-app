@@ -2,11 +2,11 @@
 
 ## About The Project
 
-Project description
+Application created to test Stripe payments in Next.js project
 
 ### Project Link
 
-link
+https://free-coffee.sebastiangolab.pl/
 
 <!-- BUILD WITH -->
 
@@ -15,6 +15,8 @@ link
 <ul>
   <li>React</li>
   <li>Next.js</li>
+  <li>Stripe</li>
+  <li>Tailwind CSS</li>
 </ul>
 
 <!-- GETTING STARTED -->
@@ -25,13 +27,13 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
--  npm
+- npm
 
-   ```sh
-   npm install npm@latest -g
-   ```
+  ```sh
+  npm install npm@latest -g
+  ```
 
--  node - https://nodejs.org/en/download/
+- node (project use version 20.17.0) - https://nodejs.org/en/download/
 
 ### Installation
 
