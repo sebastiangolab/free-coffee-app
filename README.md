@@ -47,7 +47,9 @@ To get a local copy up and running follow these simple steps.
    npm install
    ```
 
-3. Start app in local
+3. Fill .env file
+
+4. Start app in local
    ```sh
    npm run dev
    ```
@@ -57,3 +59,5 @@ To get a local copy up and running follow these simple steps.
 ## Contact
 
 Sebastian Gołąb - sebagolab97@gmail.com
+
+More about me: https://sebastiangolab.pl/
