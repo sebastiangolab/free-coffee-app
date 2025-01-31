@@ -2,6 +2,10 @@
   @apply bg-black text-base text-white font-medium rounded-xl transition-all inline-block py-3 px-8;
 }
 
+.button.disabled {
+  @apply pt-[10px] pb-[14px];
+}
+
 .button:hover {
   @apply bg-dark;
 }

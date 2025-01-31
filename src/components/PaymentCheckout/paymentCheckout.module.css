@@ -2,8 +2,8 @@
   @apply w-[550px] bg-white rounded-3xl p-9;
 }
 
-.loadingMessage {
-  @apply text-xl;
+.loaderWrapper {
+  @apply w-full h-full flex justify-center items-center;
 }
 
 .hidden {

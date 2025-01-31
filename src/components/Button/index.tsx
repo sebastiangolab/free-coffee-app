@@ -2,6 +2,7 @@
 
 import React, { ReactElement, ReactNode } from "react";
 import Link from "next/link";
+import { BarLoader } from "react-spinners";
 import styles from "./button.module.css";
 
 type ButtonProps = {
@@ -23,7 +24,7 @@ const Button = ({
   disabled,
   isFullWidth,
 }: ButtonProps): ReactElement<ButtonProps> | null => {
-  const buttonClassNames = `${styles.button} ${isFullWidth ? styles.fullWidth : ""}`;
+  const buttonClassNames = `${styles.button} ${isFullWidth ? styles.fullWidth : ""} ${disabled ? styles.disabled : ""}`;
 
   if (href) {
     return (
@@ -42,7 +43,7 @@ const Button = ({
         disabled={disabled}
         className={buttonClassNames}
       >
-        {children}
+        {disabled ? <BarLoader color="#fff" /> : children}
       </button>
     );
   }

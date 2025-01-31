@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import CheckoutForm from "@/components/CheckoutForm";
 import { staticAmountCents } from "@/config";
 import { Elements } from "@stripe/react-stripe-js";
@@ -52,7 +53,9 @@ const PaymentCheckout = () => {
   return (
     <div className={styles.wrapper}>
       {isCheckoutLoading ? (
-        <p className={styles.loadingMessage}>Loading...</p>
+        <div className={styles.loaderWrapper}>
+          <ClipLoader />
+        </div>
       ) : null}
 
       <div className={isCheckoutLoading ? styles.hidden : undefined}>
